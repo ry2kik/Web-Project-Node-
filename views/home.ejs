@@ -1,0 +1,242 @@
+<%- include('include/head.ejs') %>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-6 mt-2 mt-lg-0">
+                    <h2>Navbar</h2>
+                </div>
+                <div class="col-lg-2 col-6 social-media">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <a href="#">
+                                <i class="fa fa-facebook text-facebook icon" id="facebook" aria-hidden="true"></i>
+                                <div class="color-filling"></div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2">
+                            <a href="#">
+                                <i class="fa fa-whatsapp text-whatsapp icon" id="whatsapp" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="col-lg-2">
+                            <a href="#">
+                                <i class="fa fa-instagram icon" id="insta" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="col-lg-2">
+                            <a href="#"><i class="fa fa-youtube-play text-youtube icon" id="youtube" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 contact">
+                    <div class="row">
+                        <div class="col-8 col-lg-8 ps-4">raktimabho112000@gmail.com</div>
+                        <div class="col-4 col-lg-4 text-center">+91 9382348540</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6"></div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-4 ">
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="home">
+        <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="background-image: url('./images/image1.jpg');"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2" style="background-image: url('./images/image2.jpg');"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3" style="background-image: url('./images/image3.jpg');"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4" style="background-image: url('./images/image4.jpg');"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: url(./images/image1.jpg);">
+                    <div class="layer"></div>
+                    <div class="carousel-text">
+                        <h1>I'm a Raktim</h1>
+                        <p>Web Developer</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url(./images/image2.jpg);">
+                    <div class="layer"></div>
+                    <div class="carousel-text">
+                        <h1>I'm a Raktim</h1>
+                        <p>Web Developer</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url(./images/image3.jpg);">
+                    <div class="layer"></div>
+                    <div class="carousel-text">
+                        <h1>I'm a Raktim</h1>
+                        <p>Web Developer</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url(./images/image4.jpg);">
+                    <div class="layer"></div>
+                    <div class="carousel-text">
+                        <h1>I'm a Raktim</h1>
+                        <p>Web Developer</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <section class="container position-relative t-630 product-details" style="overflow: hidden;">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="row justify-content-center">
+                    <div class="col-6 col-lg-4" data-aos="fade-down">
+                        <h1 class="text-center text-upper text-white fs-30 p-2" style="border-radius: 5px;">Our Product</h1>
+                    </div>
+                    <div class="content text-center mt-3" data-aos="fade-down">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-lg-3 gallery">
+                    <% for (let prods of products) { %>
+                        <div class="col mt-5">
+                            <% let n = Math.floor(Math.random() * 3) %>
+                            <div class="card shadow border-0" data-aos= <%= randomAnimation[n] %>>
+                                <img src="<%=  prods.productImage %>" height="400" alt="The image is not found">
+                                <div class="card-content">
+                                    <!-- <h5 class="card-title">Name: <%= prods.productTitle %></h5> -->
+                                    <!-- <h5 class="card-description">Quality: <%= prods.productDescription %></h5>
+                                    <h5 class="card-size">Size: <%= prods.productSize %></h5>
+                                    <h5 class="card-price">Price: <%= prods.productPrice %></h5> -->
+                                    <a href="/<%= prods.id %>">
+                                        <button type="button" class="btn btn-outline-info">View Details</button>
+                                    </a>
+                                </div>
+                                <div class="card-body"></div>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="position-relative t-700 top-products" data-aos="zoom-in">
+        <div class="container-fluid color-overlay pt-5 pb-5">
+            <h1 class="text-center text-white upper fs-20 fw-700 text-upper">Top Products</h1>
+            <div class="row mt-5">
+                <div class="owl-carousel achieve-carousel owl-theme">
+                    <div class="item">
+                        <div class="card border-0 bg-transparent" style="width: 180px;">
+                            <img src="./images/image1.jpg" class="card-img-top" alt="The image is not found" height="180" style="border-radius: 50%;">
+                            <div class="card-body text-center">
+                                <p class="card-text fs-14 fw-700 lh-17 text-white">Andy Lairw</p>
+                                <p class="card-text fs-14 fw-700 lh-17 text-white">BITSAT, Rank 2</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="item">
+                        <div class="card border-0 bg-transparent" style="width: 180px;">
+                            <img src="./images/image2.jpg" class="card-img-top" alt="The image is not found" height="180"
+                                style="border-radius: 50%;">
+                            <div class="card-body text-center">
+                                <p class="card-text fs-14 fw-700 lh-17 text-white">Andy Lairw</p>
+                                <p class="card-text fs-14 fw-700 lh-17 text-white">BITSAT, Rank 2</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="item">
+                        <div class="card border-0 bg-transparent" style="width: 180px;">
+                            <img src="./images/image3.jpg" class="card-img-top" alt="The image is not found" height="180"
+                                style="border-radius: 50%;">
+                            <div class="card-body text-center">
+                                <p class="card-text fs-14 fw-700 lh-17 text-white">Andy Lairw</p>
+                                <p class="card-text fs-14 fw-700 lh-17 text-white">BITSAT, Rank 2</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="item">
+                        <div class="card border-0 bg-transparent" style="width: 180px;">
+                            <img src="./images/image4.jpg" class="card-img-top" alt="The image is not found" height="180"
+                                style="border-radius: 50%;">
+                            <div class="card-body text-center">
+                                <p class="card-text fs-14 fw-700 lh-17 text-white">Andy Lairw</p>
+                                <p class="card-text fs-14 fw-700 lh-17 text-white">BITSAT, Rank 2</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="card border-0 bg-transparent" style="width: 180px;">
+                            <img src="./images/image1.jpg" class="card-img-top" alt="The image is not found" height="180"
+                                style="border-radius: 50%;">
+                            <div class="card-body text-center">
+                                <p class="card-text fs-14 fw-700 lh-17 text-white">Andy Lairw</p>
+                                <p class="card-text fs-14 fw-700 lh-17 text-white">BITSAT, Rank 2</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="card border-0 bg-transparent" style="width: 180px;">
+                            <img src="./images/image2.jpg" class="card-img-top" alt="The image is not found" height="180"
+                                style="border-radius: 50%;">
+                            <div class="card-body text-center">
+                                <p class="card-text fs-14 fw-700 lh-17 text-white">Andy Lairw</p>
+                                <p class="card-text fs-14 fw-700 lh-17 text-white">BITSAT, Rank 2</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="card border-0 bg-transparent" style="width: 180px;">
+                            <img src="./images/image3.jpg" class="card-img-top" alt="The image is not found" height="180"
+                                style="border-radius: 50%;">
+                            <div class="card-body text-center">
+                                <p class="card-text fs-14 fw-700 lh-17 text-white">Andy Lairw</p>
+                                <p class="card-text fs-14 fw-700 lh-17 text-white">BITSAT, Rank 2</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="margin-top: 750px; overflow: hidden;">
+        <h1 class="text-upper text-center text-pink fs-36">Our Location</h1>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 ps-2 pe-2 p-lg-0"  data-aos="fade-up-right">
+                            <img src="./images/image2.jpg" alt="The image is not found" width="100%" height="550">
+                        </div>
+                        <div class="col-12 col-lg-6 ps-2 pe-2 p-lg-0"  data-aos="fade-up-left" style="height: 550px;">
+                            <iframe src="https://www.google.com/maps/embed?pb=!…" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<%- include('include/end.ejs') %>

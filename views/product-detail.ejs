@@ -1,0 +1,20 @@
+<%- include('include/header.ejs') %>
+    <article>
+        <div class="card m-4">
+            <div class="row g-0">
+                <div class="col-md-7">
+                    <img src="images/image1.jpg" class="img-fluid rounded-start" alt="The image not found">
+                </div>
+                <% for (let prods of products) { %>
+                <div class="col-md-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Product Titile: <%= prods.productTitle %></h5>
+                        <p class="card-description">Product Description: <%= products.productDescription %></p>
+                        <h5 class="card-size">Product Size: <%= products.productSize %></h5>
+                        <h5 class="card-price">Product Price: <%= products.productPrice %></h5>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </article>
